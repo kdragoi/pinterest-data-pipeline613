@@ -71,7 +71,7 @@ Retrieve the MSK cluster Bootstrap servers string and the Plaintext Apache Zooke
 ![bootstrap_server_string](screenshots/m3/1.png)
 ![zookeeper_connection_string](screenshots/m3/2.png)
 
-Nacigate to the ```kafka_2.12-2.8.1/bin``` and Create Kafka topics for pin, geo and users:
+Navigate to the ```kafka_2.12-2.8.1/bin``` and Create Kafka topics for pin, geo and users:
 ```
 ./kafka-topics.sh --bootstrap-server b-3.pinterestmskcluster.w8g8jt.c12.kafka.us-east-1.amazonaws.com:9098,b-1.pinterestmskcluster.w8g8jt.c12.kafka.us-east-1.amazonaws.com:9098,b-2.pinterestmskcluster.w8g8jt.c12.kafka.us-east-1.amazonaws.com:9098 --command-config client.properties --create --topic 0a40ea42f8d1.pin
 
