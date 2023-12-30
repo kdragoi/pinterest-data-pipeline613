@@ -57,6 +57,7 @@ client.sasl.client.callback.handler.class = software.amazon.msk.auth.iam.IAMClie
 ```
 
 The ```REST``` proxy was started on the EC2 client machine:
+
 ```
 ./kafka-rest-start /home/ec2-user/confluent-7.2.0/etc/kafka-rest/kafka-rest.properties
 ```
@@ -74,9 +75,11 @@ Once the REST proxy has started, you should see a ```INFO Server started, listen
 In a separate terminal to the one containing the listening REST proxy, the ```batch_user_posting_emulation.py``` was executed returning status code 200 for every record successfully sent to API, while the terminal containing the listening REST proxy as returned confirmation of every record being sent to the API:
 
 ```Terminal 1:```
+
 ![rest_proxy_return](screenshots/m5/4.png)
 
 ```Terminal 2:```
+
 ![terminal_200](screenshots/m5/5.png)
 
 The ```batch_user_posting_emulation.py``` was allowed to run until there was a sufficient number of records and then the S3 Bucket was checked to verify that the data was being stored correctly in each topic:
