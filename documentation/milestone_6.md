@@ -1,4 +1,4 @@
-# Milestone 5 - Batch Processing: Databricks
+# Milestone 6 - Batch Processing: Databricks
 
 ## Task 1-2
 ### Create Databricks account and Mount the S3 Bucket to Databricks
