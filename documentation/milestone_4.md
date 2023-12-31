@@ -3,7 +3,7 @@
 ## Task 1
 ### Create a custom plugin with MSK Connect
 
-Made a note of the S3 bucket name. While in the EC2 Client, the ```Confluent.io Amazon S3 Connector``` was downloaded and copied to the S3 bucket:
+Made a note of the S3 bucket name. While in the EC2 Client, the `Confluent.io Amazon S3 Connector` was downloaded and copied to the S3 bucket:
 
 ```
 sudo -u ec2-user -i
@@ -19,7 +19,7 @@ Custom plugin was created in the MSK Connect console:
 ## Task 2
 ### Create a connector with MSK Connect
 
-The connector was created, selecting the custom plugin just created and the ```pinterest-msk-cluster```.
+The connector was created, selecting the custom plugin just created and the `pinterest-msk-cluster`.
 
 The Connector configuration settings below were added:
 ```

@@ -11,7 +11,7 @@ Streams were created for each of the Pinterest tables (pin, geo and users) via A
 ## Task 2
 ### Configure the API with Kinesis proxy intergration
 
-Before configuring the API, to allow the API to invoke Kinesis Actions, the appropriate access role was retrieved ```0a40ea42f8d1-kinesis-access-role``` via AWS IAM.
+Before configuring the API, to allow the API to invoke Kinesis Actions, the appropriate access role was retrieved `0a40ea42f8d1-kinesis-access-role` via AWS IAM.
 
 To configure the API with all the necessary integrations, resources and methods must be added, to the API previously used, so that the API is able to invoke the following actions: 
 - List streams in Kinesis
@@ -22,7 +22,7 @@ First, a new resource was created called streams:
 
 ![resource_creation](screenshots/m9/3.png) 
 
-A ```GET``` method was created withing the resource:
+A `GET` method was created withing the resource:
 
 ![method_creation_1](screenshots/m9/4.png)
  
@@ -35,9 +35,9 @@ The integration request was edited to add a HTTP request header and mapping temp
 ![integration](screenshots/m9/6.png)
  
 
-Within the ```/streams``` resource, a new resource was create ```/{stream-name}``` with methods ```GET```, ```POST``` AND ```DELETE``` in the same way as before but with the respective action names and mapping templates:
+Within the `/streams` resource, a new resource was create `/{stream-name}` with methods `GET`, `POST` AND `DELETE` in the same way as before but with the respective action names and mapping templates:
 
-#### <u>```/{stream-name} GET``` Method</u>
+#### <u>`/{stream-name} GET` Method</u>
 
 **Action:** DescribeStream
 
@@ -49,7 +49,7 @@ Within the ```/streams``` resource, a new resource was create ```/{stream-name}`
 }
 ```
 
-#### <u>```/{stream-name} POST``` Method</u>
+#### <u>`/{stream-name} POST` Method</u>
 
 **Action:** CreateStream
 
@@ -62,7 +62,7 @@ Within the ```/streams``` resource, a new resource was create ```/{stream-name}`
 }
 ```
 
-#### <u>```/{stream-name} DELETE``` Method</u>
+#### <u>`/{stream-name} DELETE` Method</u>
 
 **Action:** DeleteStream
 
@@ -79,9 +79,9 @@ Resulting in API structure:
 ![API_structure_1](screenshots/m9/7.png)
 
 
-Within the ```/{stream-name}``` resource, new resources ```/record```  and ```/records``` were created, each containing a ```PUT``` method. This was done in the same way as before but with the respective action names and mapping templates:
+Within the `/{stream-name}` resource, new resources `/record`  and `/records` were created, each containing a `PUT` method. This was done in the same way as before but with the respective action names and mapping templates:
 
-#### <u>```/record PUT``` Method</u>
+#### <u>`/record PUT` Method</u>
 
 **Action:** PutRecord
 
@@ -95,7 +95,7 @@ Within the ```/{stream-name}``` resource, new resources ```/record```  and ```/r
 }
 ```
 
-#### <u>```/records PUT``` Method</u>
+#### <u>`/records PUT` Method</u>
 
 **Action:** PutRecords
 

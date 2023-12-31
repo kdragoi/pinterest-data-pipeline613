@@ -1,12 +1,12 @@
 # Milestone 3 - Batch Processing: Configuring the EC2 Kafka Client
 
 ## Task 1
-A ```.pem``` key file was created locally using the Parameter Store in the AWS Console.
+A `.pem` key file was created locally using the Parameter Store in the AWS Console.
 
 ## Task 2
 ### Connect to the EC2 instance via the SSH Client
 
-First, appropriate permissions for the ```.pem``` key file were set so that only the owner can access it:
+First, appropriate permissions for the `.pem` key file were set so that only the owner can access it:
 ```
 chmod 400 /Users/kay/Desktop/AiCore/Projects/pinterest-data-pipeline613/0a40ea42f8d1-key-pair.pem
 ```
@@ -18,14 +18,14 @@ ssh -i "0a40ea42f8d1-key-pair.pem" ec2-user@ec2-52-207-26-231.compute-1.amazonaw
 ## Task 3
 ### Set up Kafka on the EC2 Client
 
-While inside the EC2 Client, both ```Java``` and ```Apache Kafka``` were installed:
+While inside the EC2 Client, both `Java` and `Apache Kafka` were installed:
 ```
 sudo yum install java-1.8.0
 wget https://archive.apache.org/dist/kafka/2.8.1/kafka_2.12-2.8.1.tgz
 tar -xzf kafka_2.12-2.8.1.tgz
 ```
 
-An ```IAM MSK authentication package``` was also installed:
+An `IAM MSK authentication package` was also installed:
 ```
 cd /kafka_2.12-2.8.1/libs
 wget https://github.com/aws/aws-msk-iam-auth/releases/download/v1.1.5/aws-msk-iam-auth-1.1.5-all.jar
@@ -33,12 +33,12 @@ wget https://github.com/aws/aws-msk-iam-auth/releases/download/v1.1.5/aws-msk-ia
 
 #### Configuring the Kafka Client to use AWS IAM
 
-Made a note of the ```IAM access role ARN```.
+Made a note of the `IAM access role ARN`.
 
-The trust relationship was edited by replacing ARN with the ```IAM access role ARN``` so that it would be able to assume the ```0a40ea42f8d1-ec2-access-role```, which contains the necessary permissions to authenticate to the MSK cluster.
+The trust relationship was edited by replacing ARN with the `IAM access role ARN` so that it would be able to assume the `0a40ea42f8d1-ec2-access-role`, which contains the necessary permissions to authenticate to the MSK cluster.
 
 
-#### ```client_properties``` file was created inside ```kafka_2.12-2.8.1/bin``` directory:
+#### `client_properties` file was created inside `kafka_2.12-2.8.1/bin` directory:
 
 ```
 cd /home/ec2-user
@@ -66,12 +66,12 @@ sasl.client.callback.handler.class = software.amazon.msk.auth.iam.IAMClientCallb
 
 ### Create Kafka Topics
 
-The MSK cluster ```Bootstrap servers string``` and ```Plaintext Apache Zookeeper connection string``` were retrieved and made a note of:
+The MSK cluster `Bootstrap servers string` and `Plaintext Apache Zookeeper connection string` were retrieved and made a note of:
 
 ![bootstrap_server_string](screenshots/m3/1.png)
 ![zookeeper_connection_string](screenshots/m3/2.png)
 
-Navigated to the ```kafka_2.12-2.8.1/bin``` and created kafka topics for pin, geo and users:
+Navigated to the `kafka_2.12-2.8.1/bin` and created kafka topics for pin, geo and users:
 ```
 ./kafka-topics.sh --bootstrap-server b-3.pinterestmskcluster.w8g8jt.c12.kafka.us-east-1.amazonaws.com:9098,b-1.pinterestmskcluster.w8g8jt.c12.kafka.us-east-1.amazonaws.com:9098,b-2.pinterestmskcluster.w8g8jt.c12.kafka.us-east-1.amazonaws.com:9098 --command-config client.properties --create --topic 0a40ea42f8d1.pin
 

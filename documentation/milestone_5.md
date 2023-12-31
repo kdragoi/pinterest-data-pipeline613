@@ -5,11 +5,11 @@
 
 An empty API was already been provided.
 
-A resource that allows you to build a ```PROXY``` integration for the API was created:
+A resource that allows you to build a `PROXY` integration for the API was created:
 
 ![proxy_resource](screenshots/m5/1.png)
 
-A ```HTTP ANY``` method was created, providing the correct ```PublicDNS``` for the ```EndPoint URL``` from the EC2 machine:
+A `HTTP ANY` method was created, providing the correct `PublicDNS` for the `EndPoint URL` from the EC2 machine:
 
 ![proxy_ANY_method](screenshots/m5/2.png)
 ![API_tree](screenshots/m5/3.png)
@@ -26,13 +26,13 @@ cd /home/ec2-user/
 sudo wget https://packages.confluent.io/archive/7.2/confluent-7.2.0.tar.gz
 tar -xvzf confluent-7.2.0.tar.gz
 ```
-Navigated to ```confluent-7.2.0/etc/kafka-rest``` and opened the ```kafka-rest.properties``` file for modificaiton:
+Navigated to `confluent-7.2.0/etc/kafka-rest` and opened the `kafka-rest.properties` file for modificaiton:
 
 ```
 nano kafka-rest.properties
 ```
 
-The ```bootstrap.servers``` and the ```zookeeper.connect``` variables in this file were modified with the corresponding ```Boostrap server string``` and ```Plaintext Apache Zookeeper connection string```:
+The `bootstrap.servers` and the `zookeeper.connect` variables in this file were modified with the corresponding `Boostrap server string` and `Plaintext Apache Zookeeper connection string`:
 
 ```
 zookeeper.connect=z-2.pinterestmskcluster.w8g8jt.c12.kafka.us-east-1.amazonaws.com:2181,z-1.pinterestmskcluster.w8g8jt.c12.kafka.us-east-1.amazonaws.com:2181,z-3.pinterestmskcluster.w8g8jt.c12.kafka.us-east-1.amazonaws.com:2181
@@ -56,13 +56,13 @@ client.sasl.jaas.config = software.amazon.msk.auth.iam.IAMLoginModule required a
 client.sasl.client.callback.handler.class = software.amazon.msk.auth.iam.IAMClientCallbackHandler
 ```
 
-The ```REST``` proxy was started on the EC2 client machine:
+The `REST` proxy was started on the EC2 client machine:
 
 ```
 ./kafka-rest-start /home/ec2-user/confluent-7.2.0/etc/kafka-rest/kafka-rest.properties
 ```
 
-Once the REST proxy has started, you should see a ```INFO Server started, listening for requests...``` in your EC2 console
+Once the REST proxy has started, you should see a `INFO Server started, listening for requests...` in your EC2 console
 
 ## Task 3
 ### Send data to the API
@@ -71,11 +71,11 @@ Once the REST proxy has started, you should see a ```INFO Server started, listen
 
 In a separate terminal to the one containing the listening REST proxy, the [`batch_user_posting_emulation.py`](../data_emulation/batch_user_posting_emulation.py) was executed returning status code 200 for every record successfully sent to API, while the terminal containing the listening REST proxy as returned confirmation of every record being sent to the API:
 
-```Terminal 1:```
+`Terminal 1:`
 
 ![rest_proxy_return](screenshots/m5/4.png)
 
-```Terminal 2:```
+`Terminal 2:`
 
 ![terminal_200](screenshots/m5/5.png)
 
