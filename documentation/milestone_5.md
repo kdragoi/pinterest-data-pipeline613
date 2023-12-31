@@ -67,10 +67,7 @@ Once the REST proxy has started, you should see a ```INFO Server started, listen
 ## Task 3
 ### Send data to the API
 
-```user_posting_emulation.py``` was modified to send data to the coresponding Kafka topics using the ```API Invoke URL```:
-
-```FIX LINK TO FILE ```
-[batch_user_posting_emulation.py]()
+```batch_user_posting_emulation.py``` (```Link to file```) was created, which builds upon the ```user_posting_emulation.py``` (```Link to file```) to send the Pinterest data to the API which then sends the data to the coresponding Kafka topics in the S3 Bucket.
 
 In a separate terminal to the one containing the listening REST proxy, the ```batch_user_posting_emulation.py``` was executed returning status code 200 for every record successfully sent to API, while the terminal containing the listening REST proxy as returned confirmation of every record being sent to the API:
 
