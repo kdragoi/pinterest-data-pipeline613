@@ -5,4 +5,4 @@
 
 Databricks account was created.
 
-S3 Bucket was mounted to databricks using notebooks (```link to notebook here```)
+S3 Bucket was mounted to databricks using notebook [`mount_s3_bucket.ipynb`](../databricks/mount_s3_bucket.ipynb)

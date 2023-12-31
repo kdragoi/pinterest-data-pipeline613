@@ -67,9 +67,9 @@ Once the REST proxy has started, you should see a ```INFO Server started, listen
 ## Task 3
 ### Send data to the API
 
-```batch_user_posting_emulation.py``` (```Link to file```) was created, which builds upon the ```user_posting_emulation.py``` (```Link to file```) to send the Pinterest data to the API which then sends the data to the coresponding Kafka topics in the S3 Bucket.
+[`batch_user_posting_emulation.py`](../data_emulation/batch_user_posting_emulation.py) was created, which builds upon the [`user_posting_emulation.py`](../data_emulation/user_posting_emulation.py) to send the Pinterest data to the API which then sends the data to the coresponding Kafka topics in the S3 Bucket.
 
-In a separate terminal to the one containing the listening REST proxy, the ```batch_user_posting_emulation.py``` was executed returning status code 200 for every record successfully sent to API, while the terminal containing the listening REST proxy as returned confirmation of every record being sent to the API:
+In a separate terminal to the one containing the listening REST proxy, the [`batch_user_posting_emulation.py`](../data_emulation/batch_user_posting_emulation.py) was executed returning status code 200 for every record successfully sent to API, while the terminal containing the listening REST proxy as returned confirmation of every record being sent to the API:
 
 ```Terminal 1:```
 
@@ -79,7 +79,7 @@ In a separate terminal to the one containing the listening REST proxy, the ```ba
 
 ![terminal_200](screenshots/m5/5.png)
 
-The ```batch_user_posting_emulation.py``` was allowed to run until there was a sufficient number of records and then the S3 Bucket was checked to verify that the data was being stored correctly in each topic:
+The [`batch_user_posting_emulation.py`](../data_emulation/batch_user_posting_emulation.py) was allowed to run until there was a sufficient number of records and then the S3 Bucket was checked to verify that the data was being stored correctly in each topic:
 
 ![s3_topics](screenshots/m5/6.png)
 

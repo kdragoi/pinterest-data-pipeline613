@@ -124,13 +124,12 @@ API was deployed and the new Invoke URL was taken note of
 ## Task 3
 ### Send data to Kinesis Streams
 
-```streaming_user_posting_emulation.py``` (```Link to file```) was created which builds upon the ```user_posting_emulation.py``` (```Link to file```) to send the Pinterest data to the newly modified API which then sends the data to shards in the coresponding streams in AWS Kinesis.
+[`streaming_user_posting_emulation.py`](../data_emulation/stream_user_posting_emulation.py) was created which builds upon the [`user_posting_emulation.py`](../data_emulation/user_posting_emulation.py) to send the Pinterest data to the newly modified API which then sends the data to shards in the coresponding streams in AWS Kinesis.
 
 ## Task 4-6
 ### Read, clean and write data from Kinesis Streams to Databricks delta tables
 
-Stream data was read from each of the Kinesis Stream, cleaned and then was written to their respective delta tables using the code in notebook
-(```link to notebook here```) all_stream_data_processing.ipynb
+Stream data was read from each of the Kinesis Stream, cleaned and then was written to their respective delta tables using the code in notebook [`all_stream_data_processing.ipynb`](../databricks/all_stream_data_processing.ipynb)
 
 We can see that the data has been successfully proccessed via the writeStream outputs.
 

@@ -4,19 +4,19 @@
 ### Cleaning the pin, geo and user data in Databricks
 
 Data was cleaned using the code in notebook
-(```link to notebook here```) cleaning_batch_data.ipynb
+[`cleaning_batch_data.ipynb`](../databricks/cleaning_batch_data.ipynb)
 
 Schema outputs to check data cleaning is shown in notebook:
 
-pin_df:
+`pin_df`:
 
 ![pin_schema](screenshots/m7/schema/schema_pin.png)
 
-geo_df:
+`geo_df`:
 
 ![geo_schema](screenshots/m7/schema/schema_geo.png)
 
-user_df:
+`user_df`:
 
 ![user_schema](screenshots/m7/schema/schema_user.png)
 
@@ -25,7 +25,7 @@ user_df:
 ### Querying the data
 
 The data was queried using the code in notebook
-(```link to notebook here```) querying_batch_data.ipynb
+[`querying_batch_data.ipynb`](../databricks/querying_batch_data.ipynb)
 
 Query outputs are shown in the notebook:
 

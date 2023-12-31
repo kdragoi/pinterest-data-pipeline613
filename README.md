@@ -33,7 +33,7 @@ git clone https://github.com/kdragoi/pinterest-data-pipeline613.git
 ```
 pip install -r environment_requirements.txt
 ```
-Required packages can be accessed via the `environment_requirements.txt` document located in the repository.
+Required packages can be accessed via the [`environment_requirements.txt`](environment_requirements.txt) document located in the repository.
 
 </br>
 
@@ -71,7 +71,7 @@ Required packages can be accessed via the `environment_requirements.txt` documen
 
 ## The Data
 
-The python file (`link to file`), when run will minic an infinite stream of random data points that would be recieved by the pinterest API. The data points generated come from the following tables:
+The python file [`user_posting_emulation.py`](data_emulation/user_posting_emulation.py), when run will minic an infinite stream of random data points that would be recieved by the pinterest API. The data points generated come from the following tables:
 - `pinterest_data` containing data about the posts updated to Pinterest
 - `geolocation_data` containing data about the geolocation of each post within the `pinterest_data` table
 - `user_data` containing data about the users of each post within the `pinterest_data` table
@@ -103,18 +103,18 @@ Examples of the data generated:
 Below, the workflow of the project is outlined in steps. For a more detailed look at each step, click the link to the relative documentation at the end of each step.
 
 ### Batch processing:
-- With all neccessary credentials and environmental features set up, the EC2 instance was connected to, and configured as a kafka client (`link to milestone 3`)
-- The Pinterest MSK cluster was connected to the appropriate S3 bucket by creating custom plugin and connecter via MSK Connect (`link to milestone 4`)
-- A Kafka REST API was built and configured in AWS API Gateway and data was sent to the S3 bucket via the API (`link to milestone 5`)
-- Databricks was set up and the S3 bucket was mounted. Data from the S3 bucket was ingested (`link to milestone 6`)
-- In Databricks the ingested data was cleaned and queried using Apache Spark (`link to milestone 7`)
-- A DAG file was created and uploaded to AWS MWAA (Airflow UI) to schedule the running of the batch processing notebooks in databricks (`link to milestone 8`)
+- With all neccessary credentials and environmental features set up, the EC2 instance was connected to, and configured as a kafka client [`(Milestone 3 Documentation)`](documentation/milestone_3)
+- The Pinterest MSK cluster was connected to the appropriate S3 bucket by creating custom plugin and connecter via MSK Connect [`(Milestone 4 Documentation)`](documentation/milestone_4)
+- A Kafka REST API was built and configured in AWS API Gateway and data was sent to the S3 bucket via the API [`(Milestone 5 Documentation)`](documentation/milestone_5)
+- Databricks was set up and the S3 bucket was mounted. Data from the S3 bucket was ingested [`(Milestone 6 Documentation)`](documentation/milestone_6)
+- In Databricks the ingested data was cleaned and queried using Apache Spark [`(Milestone 7 Documentation)`](documentation/milestone_7)
+- A DAG file was created and uploaded to AWS MWAA (Airflow UI) to schedule the running of the batch processing notebooks in databricks [`(Milestone 8 Documentation)`](documentation/milestone_8)
 
 ### Stream processing:
 - Kinesis data streams were set up for the pinterest data and the API was reconfigured to allow the requests to be routed to Kenisis
 - In Databricks, the streams data was ingested from Kenisis and cleaned
 - The clean data was then written into delta tables
-- (`link to milestone 9`)
+- [`(Milestone 9 Documentation)`](documentation/milestone_9)
 
 </br>
 

@@ -15,7 +15,7 @@ dbutils.notebook.entry_point.getDbutils().notebook().getContext().notebookPath()
 spark.conf.get("spark.databricks.clusterUsageTags.clusterId")
 ```
 
-The DAG file (```link to file```) was created with relevant notebook path and cluster-id and set to run daily
+The DAG file [`0a40ea42f8d1_dag.py`](../0a40ea42f8d1_dag.py) was created with relevant notebook path and cluster-id and set to run daily
 
 The DAG file was then uploaded to the DAGs folder in the ```mwaa-dags-bucket``` S3 bucket:
 
